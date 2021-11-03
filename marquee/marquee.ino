@@ -322,6 +322,8 @@ void setup() {
     server.on("/configureoctoprint", handleOctoprintConfigure);
     server.on("/configurepihole", handlePiholeConfigure);
     server.on("/display", handleDisplay);
+    server.on("/display/on", handleDisplayOn);
+    server.on("/display/off", handleDisplayOff);
     server.onNotFound(redirectHome);
     serverUpdater.setup(&server, "/update", www_username, www_password);
     // Start the server
@@ -917,6 +919,24 @@ void handleDisplay() {
     state = "ON";
   }
   displayMessage("Display is now " + state);
+}
+
+void handleDisplayOn() {
+  if (!athentication()) {
+    return server.requestAuthentication();
+  }
+
+  enableDisplay(true);
+  displayMessage("Display turned ON");
+}
+
+void handleDisplayOff() {
+  if (!athentication()) {
+    return server.requestAuthentication();
+  }
+
+  enableDisplay(false);
+  displayMessage("Display turned OFF");
 }
 
 //***********************************************************************
