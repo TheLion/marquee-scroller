@@ -127,4 +127,3 @@ String BitcoinApiClient::getDescription() {
 float BitcoinApiClient::getRateFloat() {
   return bpiData.rate_float;
 }
-
