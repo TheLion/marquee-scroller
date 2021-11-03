@@ -57,17 +57,17 @@ SOFTWARE.
 // Start Settings
 //******************************
 
-String TIMEDBKEY = ""; // Your API Key from https://timezonedb.com/register
-String APIKEY = ""; // Your API Key from http://openweathermap.org/
+String TIMEDBKEY = "XVPY71HBPAJO"; // Your API Key from https://timezonedb.com/register
+String APIKEY = "19780e2efd7aaffaabe634a49086cf70"; // Your API Key from http://openweathermap.org/
 // Default City Location (use http://openweathermap.org/find to find city ID)
-int CityIDs[] = { 5304391 }; //Only USE ONE for weather marquee
+int CityIDs[] = { 2754073 }; //Only USE ONE for weather marquee
 String marqueeMessage = "";
-boolean IS_METRIC = false; // false = Imperial and true = Metric
-boolean IS_24HOUR = false; // 23:00 millitary 24 hour clock
-boolean IS_PM = true; // Show PM indicator on Clock when in AM/PM mode
+boolean IS_METRIC = true; // false = Imperial and true = Metric
+boolean IS_24HOUR = true; // 23:00 millitary 24 hour clock
+boolean IS_PM = false; // Show PM indicator on Clock when in AM/PM mode
 const int WEBSERVER_PORT = 80; // The port you can access this device on over HTTP
 const boolean WEBSERVER_ENABLED = true;  // Device will provide a web interface via http://[ip]:[port]/
-boolean IS_BASIC_AUTH = false;  // Use Basic Authorization for Configuration security on Web Interface
+boolean IS_BASIC_AUTH = true;  // Use Basic Authorization for Configuration security on Web Interface
 char* www_username = "admin";  // User account for the Web Interface
 char* www_password = "password";  // Password for the Web Interface
 int minutesBetweenDataRefresh = 15;  // Time in minutes between data refresh (default 15 minutes)
@@ -95,14 +95,14 @@ const int numberOfVerticalDisplays = 1; // default 1 for a single row height
 */
 int ledRotation = 3;
 
-String timeDisplayTurnsOn = "06:30";  // 24 Hour Format HH:MM -- Leave blank for always on. (ie 05:30)
-String timeDisplayTurnsOff = "23:00"; // 24 Hour Format HH:MM -- Leave blank for always on. Both must be set to work.
+String timeDisplayTurnsOn = "07:00";  // 24 Hour Format HH:MM -- Leave blank for always on. (ie 05:30)
+String timeDisplayTurnsOff = "00:00"; // 24 Hour Format HH:MM -- Leave blank for always on. Both must be set to work.
 
 // OctoPrint Monitoring -- Monitor your 3D printer OctoPrint Server
-boolean OCTOPRINT_ENABLED = false;
+boolean OCTOPRINT_ENABLED = true;
 boolean OCTOPRINT_PROGRESS = true;
-String OctoPrintApiKey = "";  // ApiKey from your User Account on OctoPrint
-String OctoPrintServer = "";  // IP or Address of your OctoPrint Server (DO NOT include http://)
+String OctoPrintApiKey = "E3E06A02A39940DB8A80948A8252720F";  // ApiKey from your User Account on OctoPrint
+String OctoPrintServer = "octopi.fourpets.net";  // IP or Address of your OctoPrint Server (DO NOT include http://)
 int OctoPrintPort = 80;       // the port you are running your OctoPrint server on (usually 80);
 String OctoAuthUser = "";     // only used if you have haproxy or basic athentintication turned on (not default)
 String OctoAuthPass = "";     // only used with haproxy or basic auth (only needed if you must authenticate)
@@ -112,7 +112,7 @@ String BitcoinCurrencyCode = "NONE";  // Change to USD, GBD, EUR, or NONE -- thi
 
 // Pi-hole Client -- monitor basic stats from your Pi-hole server (see http://pi-hole.net)
 boolean USE_PIHOLE = false;   // Set true to display your Pi-hole details
-String PiHoleServer = "";     // IP or Address only (DO NOT include http://)
+String PiHoleServer = "192.168.206.108";     // IP or Address only (DO NOT include http://)
 int PiHolePort = 80;          // Port of your Pi-hole address (default 80)
 
 boolean ENABLE_OTA = true;    // this will allow you to load firmware to the device over WiFi (see OTA for ESP8266)
